@@ -1,0 +1,31 @@
+
+@width: 100px;
+@border-type: 1px solid darkgreen;
+
+.border {
+    border: @border-type
+}
+
+table {
+    margin-top: 1rem;
+    border-collapse: collapse
+}
+
+th {
+    width: @width;
+    .border();
+}
+
+td {
+    border-top: @border-type;
+    border-bottom: @border-type;
+    text-align: center;
+    
+    &:first-child {
+        border-left: @border-type
+    }
+    
+    &:last-child {
+        border-right: @border-type
+    }
+}

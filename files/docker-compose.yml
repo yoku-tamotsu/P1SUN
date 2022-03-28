@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: p1sun
+      POSTGRES_PASSWORD: p1sun
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+      - ./pgsql/baza_danych_testowa.sql:/docker-entrypoint-initdb.d/create_tables.sql
